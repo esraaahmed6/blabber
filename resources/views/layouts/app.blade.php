@@ -39,77 +39,7 @@
 </head>
 
 <body id="app-layout">
-     <header role="banner">
-        <div class="top-bar">
-          <div class="container">
-            <div class="row">
-              <div class="col-9 social">
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-instagram"></span></a>
-                <a href="#"><span class="fa fa-youtube-play"></span></a>
-              </div>
-              <div class="col-3 search-top">
-                <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container logo-wrap">
-          <div class="row pt-5">
-            <div class="col-12 text-center">
-              <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo">bogle</h1>
-            </div>
-          </div>
-        </div>
-        
-        <nav class="navbar navbar-expand-md  navbar-light bg-light">
-          <div class="container">
-            
-           
-            <div class="collapse navbar-collapse" id="navbarMenu">
-             <ul class="navbar-nav mx-auto">
-               
-                    <a class="navbar-brand" href="{{ url('/') }}">welcome </a>
-           <a  class="navbar-brand"   href="{{ url('/home') }}">Home</a>
-               
-                <li class="nav-item dropdown">
-                  <a class="navbar-brand" href="category.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Travel</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="category.html">Asia</a>
-                    <a class="dropdown-item" href="category.html">Europe</a>
-                  
-                  </div>
-
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="category.html">Lifestyle</a>
-                    <a class="dropdown-item" href="category.html">Food</a>
-                    <a class="dropdown-item" href="category.html">Adventure</a>
-                  
-                  </div>
-
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-              </ul>
-              
-            </div>
-          </div>
-        </nav>
-      </header>
     
-    @yield('header')
     
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -125,14 +55,14 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                   Home
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">Profile</a></li>
                     <li><a href="{{ url('/view') }}">Articles</a></li>
                 </ul>
 

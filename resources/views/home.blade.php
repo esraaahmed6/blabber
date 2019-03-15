@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('header')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    Welcome {{ Auth::user()->name }} :D Happy for being here 
                 </div>
             </div>
             <div class="panel panel-default">
@@ -21,7 +21,7 @@
                     <td> {{$ar->body}}</a>
                     </td>
                     <td>
-                       <button href="{{ "manage/delete/{id}"}}" type="button" class="btn btn-default">Delete</button>
+                       <a href="{{"/delete/".$ar->id}}"  class="btn btn-default">Delete</a>
                     </td>
                     <td>
                          <a href="{{ "/edit/".$ar->id }}" >edit</a>
