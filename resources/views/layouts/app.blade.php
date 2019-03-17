@@ -35,10 +35,13 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        
+        
     </style>
 </head>
 
-<body id="app-layout">
+<body id="app-layout" style="background-color:#EEE ">
     
     
     <nav class="navbar navbar-default navbar-static-top">
@@ -62,8 +65,14 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Profile</a></li>
+                        
+                    <li><a href="{{ url('/userProfile') }}">Profile</a></li>
                     <li><a href="{{ url('/view') }}">Articles</a></li>
+                    <li><a href="{{ url('/about') }}">About</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li><i class="fa fa-twitter"></i></li>
+                    <li><i class="fa fa-facebook"></i></li>
+                    <li><i class="fa fa-youtube-play"></i></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

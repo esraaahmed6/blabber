@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label for="usr">body:</label>
-                <textarea rows="4" cols="50"  name="body" value="{{$Article->body}}" class="form-control">
+                <textarea rows="4" cols="50"  name="body" value="{{$Article->body}}" class="form-control">{{$Article->body}}
       </textarea>
             </div>
 

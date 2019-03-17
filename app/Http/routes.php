@@ -15,14 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/userProfile', 'UserController@index');
 Route::get('add', 'manage@AddArticle');
 Route::post('add', 'manage@AddArticle');
 Route::get('view', 'manage@view');
 Route::get('/read/{id}', 'manage@read');
 Route::post('/read/{id}', 'manage@read');
-Route::get('/delete/{id}', 'HomeController@delete');
-Route::get('/edit/{id}', 'HomeController@edit');
-Route::post('/edit/{id}', 'HomeController@edit');
+Route::get('/delete/{id}', 'UserController@delete');
+Route::get('/edit/{id}', 'UserController@edit');
+Route::post('/edit/{id}', 'UserController@edit');

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Article;
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -29,7 +29,7 @@ class HomeController extends Controller
         $ar=Array('articles'=>$articles);
        
     
-        return view('home',$ar);
+        return view('userProfile',$ar);
     }
     
        
@@ -38,15 +38,16 @@ class HomeController extends Controller
 
         $article=Article::find($id);
         $article->delete();
-       // $comm= comment::all('article_id',$id);
-      //if( hasValue($comm)){
-       //   $comm->delete();
-       //   return redirect("view" );
-      //}
-     // else{
-          
-     // }
-        
+       /* $comm= comment::all('article_id',$id);
+      if( hasValue($comm)){
+          $comm->delete();
+         $article->delete();
+         return redirect("view" );
+      }
+      else{
+           $article->delete();
+      } */
+       
         return redirect("view" );
     }
     
