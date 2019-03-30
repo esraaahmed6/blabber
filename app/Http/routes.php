@@ -33,3 +33,6 @@ Route::post('/read/{id}', 'manage@read');
 Route::get('/delete/{id}', 'UserController@delete');
 Route::get('/edit/{id}', 'UserController@edit');
 Route::post('/edit/{id}', 'UserController@edit');
+Route::get('/admin', 'UserController@control');
+Route::post('/search','UserController@search');
+//Route::get('/deletee/{id}', 'UserController@deletee');

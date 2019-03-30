@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Article;
+use DB;
+use  Illuminate\Support\Facades\Input;
+use App\User;
+
 class UserController extends Controller
 {
     /**
@@ -67,4 +71,25 @@ $ar= Article::find($id);
         return view('manage.edit',$arr);}
     }
 
+public function control()
+    { 
+         $articles = DB::table('articles')->get();
+        return view('manage.admin', compact('articles'));
+    }
+
+public function search(){
+    $q = Input::get ( 'q' );
+    $articles = article::where('title','LIKE','%'.$q.'%')->orWhere('body','LIKE','%'.$q.'%')->get();
+    if(count($articles) > 0)
+        return view('manage.search')->withDetails($articles)->withQuery ( $q );
+    
+    else 
+        return view ('manage.search')->withMessage('No Details found. Try to search again !');
+
+}
+/*public function deletee($id)
+{
+    DB::table('articles')->where('id',$id)->delete();
+    return redirect ('admin');
+}*/
 }

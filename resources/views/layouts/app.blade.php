@@ -39,6 +39,16 @@
         a {
   text-decoration: none;
 }
+  .f
+        {
+    float:right;
+ 
+margin-top: 9px;
+  margin-left:410px;
+
+  font-size: 17px;
+  width: 170px ;
+        }
         
     </style>
 </head>
@@ -65,14 +75,38 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                     @if (Auth::check())
+                     <li><a href="{{ url('/userProfile') }}">Profile</a></li>
+                   
+                    @if (Auth::user()->role >= 1)
+                    <li><a href="{{ url('/admin') }}">Control</a></li>
+                    @endif
+
+                    @endif
                         
-                    <li><a href="{{ url('/userProfile') }}">Profile</a></li>
+                     @if (Auth::check())
                     <li><a href="{{ url('/view') }}">Articles</a></li>
+                     @endif
                     <li><a href="{{ url('/about') }}">About</a></li>
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                    <!-- <li><i class="fa fa-twitter"></i></li>
                     <li><i class="fa fa-facebook"></i></li>
                     <li><i class="fa fa-youtube-play"></i></li>-->
+                     @if (Auth::check())
+                      <li><div class ='f'><form action="/search" method="POST" role="search">
+                   {{ csrf_field() }}
+               <div class="input-group">
+                 <input type="text" class="form-control" name="q"
+            placeholder="Search Articles"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
+</div>
+</li>
+ @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
