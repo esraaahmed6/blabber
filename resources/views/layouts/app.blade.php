@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
+    
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
@@ -36,27 +36,27 @@
             margin-right: 6px;
         }
 
-        
+        a {
+  text-decoration: none;
+}
         
     </style>
 </head>
 
-<body id="app-layout" style="background-color:#EEE ">
+<body id="app-layout" >
     
     
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
+                  <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                    Home
                 </a>
@@ -70,9 +70,9 @@
                     <li><a href="{{ url('/view') }}">Articles</a></li>
                     <li><a href="{{ url('/about') }}">About</a></li>
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
-                    <li><i class="fa fa-twitter"></i></li>
+                   <!-- <li><i class="fa fa-twitter"></i></li>
                     <li><i class="fa fa-facebook"></i></li>
-                    <li><i class="fa fa-youtube-play"></i></li>
+                    <li><i class="fa fa-youtube-play"></i></li>-->
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -98,6 +98,17 @@
     </nav>
 
     @yield('content')
+     <!--footer -->
+ <!-- <footer>
+    <div class="wrapper">
+      <ul id="icons">
+        <li><a href="#" class="normaltip"><img src="images/icon1.jpg" alt=""></a></li>  
+        <li><a href="#" class="normaltip"><img src="images/icon4.jpg" alt=""></a></li>
+        <li><a href="#" class="normaltip"><img src="images/icon5.jpg" alt=""></a></li> 
+      </ul>
+      <div class="links">Copyright &copy; All Rights Reservd</div>
+    </div>
+  </footer> -->
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
