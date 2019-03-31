@@ -24,10 +24,12 @@ Route::get('/contact', function () {
 
 Route::auth();
 
+Route::get('/', 'guestController@viewG');
 Route::get('/userProfile', 'UserController@index');
 Route::get('add', 'manage@AddArticle');
 Route::post('add', 'manage@AddArticle');
 Route::get('view', 'manage@view');
+Route::get('/readg/{id}', 'guestController@readG');
 Route::get('/read/{id}', 'manage@read');
 Route::post('/read/{id}', 'manage@read');
 Route::get('/delete/{id}', 'UserController@delete');
