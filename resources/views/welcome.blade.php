@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                  <div class="panel-body">
-                       <div class="container">
+                       
                                <table class="table table-striped">
                                    <tr>
                                        <td> Title</td>
@@ -23,7 +23,7 @@
                                    @endforeach
 
                                </table>
-                           </div>
+                          
                 </div>
             </div>
         </div>
@@ -31,3 +31,5 @@
  </div>
 @endsection
 
+
+ 

@@ -29,9 +29,9 @@
                             <td>{{$art->body}}</td>
                             <td>
 
-                            <a herf="{{"/delete/".$art->id}}" class="btn btn-danger pull-center">DELETE</a>
+                           <!-- <a herf="{{"/delete/".$art->id}}" class="btn btn-danger pull-center">DELETE</a> -->
                              
-                                  
+                               <a href="{{ "/delete/".$art->id}}">delet</a>   
                               
                             </td>
                           </tr>

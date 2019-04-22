@@ -17,7 +17,7 @@
     </div>
 </form>
 </tr></div>
-<div class="container">
+
     @if(isset($details))
        <!-- <p> The Search results for your query <b> {{ $query }} </b> are :</p>-->
     <h2 style="text-align: left;">Search Result</h2>
@@ -38,7 +38,7 @@
         </tbody>
     </table>
     @endif
-</div>
+
 
             </div>
         </div>
