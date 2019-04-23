@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
- //   return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/about', function () {
     return view('about');
@@ -25,7 +25,6 @@ Route::get('/contact', function () {
 Route::auth();
 
 Route::get('/', 'guestController@viewG');
-Route::get('/home', 'UserController@index');
 Route::get('/userProfile', 'UserController@index');
 Route::get('add', 'manage@AddArticle');
 Route::post('add', 'manage@AddArticle');
@@ -39,5 +38,3 @@ Route::post('/edit/{id}', 'UserController@edit');
 Route::get('/admin', 'UserController@control');
 Route::post('/search','UserController@search');
 //Route::get('/deletee/{id}', 'UserController@deletee');
-
-

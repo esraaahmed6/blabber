@@ -168,13 +168,6 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-    'providers' => [
-
-        ......,
-
-        App\Repositories\User\UserRepoServiceProvide::class,
-
-    ]
 
     'aliases' => [
 

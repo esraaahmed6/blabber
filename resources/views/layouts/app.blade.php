@@ -7,97 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-   <title>Plogy</title>
-<link rel="stylesheet" href="{{asset('css1.css')}}">
-<link rel="stylesheet" href="{{asset('css2.css')}}">
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <title>Laravel</title>
+  
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     
- <style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
-    <link href="../css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap-grid.css" rel="stylesheet" type="text/css">
-    <link href="../css/animate.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/flaticon/font/flaticon.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">
-    
-    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
-
-      
-    
- </style>
-</head>
-
-<!--<body id="app-layout" >-->
-    
-<div  class='fixed' ></div>    
-<body class="w3-theme-l5">
-<nav>
-
- <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  
- @if (Auth::check())
-  <a href="{{ url('/userProfile') }}" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-  @endif
-
-  @if (!Auth::check())
-  <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
- @endif
-  <a href="{{ url('/about') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="About"><i class="fa fa-globe"></i></a>
-   
-  
-       @if (Auth::check())
-       <div>
-         <li>
-           <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
-          <div class ='nav navbar-nav navbar-right'><form action="/search" method="POST" role="search">
-                {{ csrf_field() }}
-            <div class="input-group">
-             <input type="text" class="form-control" name="q" placeholder="Search Articles"> <span class="input-group-btn"></span>
-              <button type="submit" class="btn btn-default">
-              <span class="glyphicon glyphicon-search"></span>
-              </button>
-                 </div>
-                </form>
-               </div>
-              </li>
-             </div>
-
-             @endif
-          
-
-            </div>
-        </div>
-    </nav>                
-      
-<head>
-      
-    <!-- Fonts -->
-    
-
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
-      <link href="../css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-      <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css">
-      <link href="../css/bootstrap-grid.css" rel="stylesheet" type="text/css">
-      <link href="../css/animate.css" rel="stylesheet" type="text/css">
-      <link href="../fonts/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="../fonts/flaticon/font/flaticon.css" rel="stylesheet" type="text/css">
-      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="   stylesheet">
+    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+ <link href="../css/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+ <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+ <link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css"/>
+ <link href="../css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
+ <link href="../css/animate.css" rel="stylesheet" type="text/css"/>
+ <link href="../fonts/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+ <link href="../fonts/flaticon/font/flaticon.css" rel="stylesheet" type="text/css"/>
+ <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">
     
     <style>
            
@@ -108,8 +35,69 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        a {
+  text-decoration: none;
+}
+  .f
+        {
+    float:right;
+ 
+margin-top: 9px;
+  margin-left:410px;
+
+  font-size: 17px;
+  width: 170px ;
+        }
+        
     </style>
-    </head>
+</head>
+
+<body id="app-layout" >
+    
+    
+  <nav class="navbar navbar-expand-md navbar-dark  bg-dark">
+    <div class="container">
+        
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+            </ul>
+        </div>
+    </div>
+</nav>
+
     @yield('content')
      <!--footer -->
  <!-- <footer>
@@ -123,40 +111,18 @@
     </div>
   </footer> -->
 
-    <!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-padding-16">
-  <h5>Footer</h5>
-</footer>
-
-<footer class="w3-container w3-theme-d5">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
- 
-<script>
-// Accordion
-function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-theme-d1";
-  } else { 
-    x.className = x.className.replace("w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-theme-d1", "");
-  }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-migrate-3.0.0.js" type="text/javascript"></script>
+    <script src="../js/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="../js/main.js" type="text/javascript"></script>
+    <script src="../js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="../js/popper.min.js" type="text/javascript"></script>
+    
+    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
-</html> 
-
+</html>

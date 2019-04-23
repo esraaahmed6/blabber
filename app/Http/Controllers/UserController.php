@@ -9,7 +9,6 @@ use DB;
 use  Illuminate\Support\Facades\Input;
 use App\User;
 
-
 class UserController extends Controller
 {
     /**
@@ -27,24 +26,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  /*  public function index()
+    public function index()
     {
-       $id = Auth::user()->id;
+        $id = Auth::user()->id;
        $articles= Article::where('user_id','=',$id)->get();
-       $ar=Array('articles'=>$articles);
+        $ar=Array('articles'=>$articles);
        
     
-        return view('site.home',$ar);
-    } */
-
-     public function index()
-    {
-       $articles= Article::all();
-        $ar=Array('articles'=>$articles);
-    
-        return view('site.home',$ar);
+        return view('userProfile',$ar);
     }
-
     
        
       public  function  delete(Request $request ,$id){
@@ -62,7 +52,7 @@ class UserController extends Controller
            $article->delete();
       } */
        
-        return redirect("site.home" );
+        return redirect("view" );
     }
     
     public  function  edit(Request $request ,$id){
@@ -81,14 +71,13 @@ $ar= Article::find($id);
         return view('manage.edit',$arr);}
     }
 
-
-     public function control()
+public function control()
     { 
          $articles = DB::table('articles')->get();
         return view('manage.admin', compact('articles'));
     }
 
-     public function search(){
+public function search(){
     $q = Input::get ( 'q' );
     $articles = article::where('title','LIKE','%'.$q.'%')->orWhere('body','LIKE','%'.$q.'%')->get();
     if(count($articles) > 0)
