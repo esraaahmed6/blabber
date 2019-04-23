@@ -25,6 +25,24 @@ class User extends Authenticatable
     ];
 
 
+     public function getAll()
+    {
+        return static::all();
+    }
+
+
+    public function findUser($id)
+    {
+        return static::find($id);
+    }
+
+
+    public function deleteUser($id)
+    {
+        return static::find($id)->delete();
+    }
+
+
     public $table="users";
     public function articles()
     {
