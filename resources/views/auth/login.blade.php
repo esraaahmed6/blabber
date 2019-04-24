@@ -1,22 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="cooon">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">login</div>
-
-                 <div class="panel-body">
-                   <div>
-                    <div>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <div>
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
@@ -65,17 +55,6 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-
-
-                                
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
- </div>
                             </div>
                         </div>
                     </form>

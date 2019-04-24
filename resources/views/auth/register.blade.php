@@ -1,15 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="cooon">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">login</div>
-
-                 <div class="panel-body">
-                   <div>
-                    <div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -80,16 +71,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
-
-                                        
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
- </div>
                             </div>
                         </div>
                     </form>

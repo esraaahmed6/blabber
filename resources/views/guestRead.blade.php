@@ -1,26 +1,9 @@
 @extends('layouts.app')
 
-<div>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
- @section('content')
-   <div class="cooon">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
-                 <div class="panel-body">
-                   <div>
-                    <div>
- <div class="cooon">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{$article->user->name}}</div>
-
-                 <div class="panel-body">
-                   <div>
-                    <div>
+@section('content')
+    <div class="container">
 
 
         <div class="form-group">
@@ -32,20 +15,4 @@
             {{$article->body}}
         </div>
     </div>
-  </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
- </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
- @endsection
-</div>
+@endsection
