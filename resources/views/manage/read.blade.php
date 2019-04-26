@@ -14,7 +14,14 @@
             <label for="usr">body:</label>
             {{$article->body}}
         </div>
-
+        @if($article->url)
+         <div class="form-group">
+            
+            <label for="usr">attachment:</label> 
+            <td><a href="upload/{{$article->url}}" >{{$article->url}}</a></a>
+                    </td>
+      </div>
+ @endif
         <div class="form-group">
 
             <table class="table table-striped">

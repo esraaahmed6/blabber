@@ -20,6 +20,13 @@
                     </td>
                     <td> {{$ar->body}}</a>
                     </td>
+                     <!-- if i want to display image  //<td> <img src="upload/{{$ar->url}}"></a> 
+                    </td> -->
+                    <td><a href="upload/{{$ar->url}}" >{{$ar->url}}</a></a>
+                    </td>
+
+                    <!-- if i want to display name of image only // <td> {{$ar->url}}</a>
+                    </td> -->
                     <td>
                        <a href="{{"/delete/".$ar->id}}"  class="btn btn-default">Delete</a>
                     </td>

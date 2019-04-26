@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/app/Http/Controllers/HomeController.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/database/migrations/2016_08_09_064742_create_comments.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/resources/views/manage/read.blade.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/app/Http/Controllers/manage.php</file>
-            <file>file:/C:/xampp/htdocs/LaravelBlogProject-master/blog/resources/views/manage/edit.blade.php</file>
-        </group>
-    </open-files>
 </project-private>
