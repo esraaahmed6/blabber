@@ -1,41 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" >
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    Welcome {{ Auth::user()->name }} :D Happy for being here 
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <table  class="table table-striped">
-                <div class="panel-body">
-                      @foreach($articles as $ar)
-                <tr>
-                    <td> {{$ar->title}}</a>
-                    </td>
-                    <td> {{$ar->body}}</a>
-                    </td>
-                    <td>
-                       <a href="{{"/delete/".$ar->id}}"  class="btn btn-default">Delete</a>
-                    </td>
-                    <td>
-                       
-                         <a href="{{ "/edit/".$ar->id }}" class="btn btn-primary" ><i class="fa fa-pencil"></i>Edit</a>
-                    </td>
-                </tr>
-                 
-                
-                
-            @endforeach
-            <table>
-</div>
-            </div>
+    <h1 class="my-4">Dashboard
+          <small>Welcome {{ Auth::user()->name }} :D Happy for being here</small>
+        </h1>
+  
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          @foreach($articles as $art)
+          <div class="card-body">
+            <ul class="pagination  mb-4">
+
+<li  style="padding-right:500px">
+            <h2 class="card-title">{{$art->title}}</h2>
+
+            <p class="card-text"> {{ $art->body}} </p>
+            
+</li>
+          <li class="page-item" style="padding-right:5px">
+           <a href="{{ "/edit/".$art->id }}" class="btn btn-primary" ><i class="fa fa-pencil"></i>Edit</a>
+          </li>
+          <li class="page-item disabled">
+            <a  href="{{"/delete/".$art->id}}"  class="btn btn-primary">Delete</a>
+          </li>
+        </ul>
+          </div>
+          <div class="card-footer text-muted">
+            <p>
+            <span class="glyphicon glyphicon-time"></span>   
+            Posted on {{ $art->created_at->toDayDateTimeString() }} by
+            <a href="#">Start Bootstrap</a>
+          </p>
+          </div>
+            
+       
+         @endforeach
         </div>
-    </div>
-
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
 @endsection
+

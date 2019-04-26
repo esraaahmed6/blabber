@@ -1,56 +1,68 @@
 @extends('layouts.app')
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 @section('content')
-    <div class="container">
+        <div class="container">
 
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-12">
+
+        <!-- Title -->
+        <h2 class="card-title">{{$article->title}}</h2>
+
+        <!-- Author -->
+        <p class="lead">
+          by 
+          <a href="#">{{$article->user->name}}</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on {{ $article->created_at->toDayDateTimeString() }}</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="upload/{{$article->url}}" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">{{$article->body}}</p>
+        <hr>
 
         <div class="form-group">
-            <label for="usr">Title:</label>
-            {{$article->title}}
+ <!-- Single Comment --> 
+  @foreach($article->comments as $c)
+        <div class="media mb-4">
+         
+        
+          <div class="media-body">
+            <h5 class="mt-0"> {{ $c->user->name }}</h5>
+           {{$c->comment}}
+          </div>
+
         </div>
-        <div class="form-group">
-            <label for="usr">body:</label>
-            {{$article->body}}
+              @endforeach
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+           <form action="/read/{{$article->id}}" method="POST">
+            {{csrf_field()}}
+            <div class="form-group">
+
+              <label for="usr"></label>
+
+              <textarea rows="4" cols="50"  name="body" class="form-control">
+              </textarea>
+            </div>
+          <input type="submit" value="add comment" class="btn btn-primary"/>
+        </form>
+          
+          </div>
         </div>
-
-        <div class="form-group">
-
-            <table class="table table-striped">
-                <tr>
-                    <td> User Name</td>
-                    <td> <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> </td>
-                </tr>
-
-                @foreach($article->comments as $c)
-                  
-                    <tr>
-                        <td>{{ $c->user->name }}
-@
-                        </td>
-                    
-                        
-                        <td>  {{$c->comment}}
-                        </td>
-                    </tr>
-                @endforeach
-
-            </table>
-
-            <form action="/read/{{$article->id}}" method="POST">
-                {{csrf_field()}}
-                <div class="form-group">
-                    
-                    <label for="usr">body:</label>
-                    
-                    <textarea rows="4" cols="50"  name="body" class="form-control">
-      </textarea>
-                </div>
-
-                </br>
-                <input type="submit" value="add comment" class="btn btn-primary"/>
-            </form>
         </div>
     </div>
 @endsection

@@ -1,44 +1,42 @@
 @extends('layouts.app')
 
+
 @section('content')
- <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
 
-                 <div class="panel-body">
-                  
+    <h1 class="my-4">Page Heading
+          <small>Secondary Text</small>
+        </h1>
+  
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          @foreach($articles as $art)
+          <div class="card-body">
+            <h2 class="card-title">{{$art->title}}</h2>
+            <h2 class="card-title">
+             <img class="img-fluid rounded" src="upload/{{$art->url}}" alt="">
+           </h2>
+            <p class="card-text"> {{ $art->body}} </p>
+            <a href="{{ "/readg/".$art->id}}"" class="btn btn-primary">Read More &rarr;</a>
 
-                       
-                               <table class="table table-striped">
-                                   <tr>
-                                       <td> Title</td>
-                                   </tr>
-                               <div class="panel-body1">
-                          @foreach($articles as $art)
-                               <div class="panel-body2">
-                      <div>
-                        <div>
-                             
-                                       <tr>
-                                           <td> <a href="{{ "/readg/".$art->id}}">{{$art->title}}</a>
-                                           </td>
-                  
-                                       </tr>
-                                       </div>
-                           </div>
-                            </div>
-                                   @endforeach
-
-                               </table>
-                          
-                </div>
-            </div>
+          </div> 
+          <div class="card-footer text-muted">
+            <p>
+            <span class="glyphicon glyphicon-time"></span>   
+            Posted on {{ $art->created_at->toDayDateTimeString() }} by
+            <a href="#">Start Bootstrap</a>
+          </p>
+          </div>
+       @endforeach
         </div>
-    </div>
- </div>
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
 @endsection
 
 
- 

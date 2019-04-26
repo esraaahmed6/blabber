@@ -9,6 +9,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Array_;
 use App\Comment;
+use DB;
 
 class manage extends Controller
 {
@@ -19,17 +20,33 @@ class manage extends Controller
     }
 
     public  function AddArticle(Request $request){
-
-        if ($request->isMethod('post')){
+        $this->validate(request(),[
+            'title'=> 'required',
+            'body'=> 'required',
+            
+        ]
+    );
+      
+        $img_name = time().'.'. $request->url->getClientOriginalExtension();
+       
             $ar= new Article();
             $ar->title=$request->input('title');
             $ar->body=$request->input('body');
+            $ar->url=$request->$img_name;
             $ar->user_id=Auth::user()->id;
             $ar->save();
             return redirect('view');
-        }
-        return view('manage.AddArticle');
+        
+        $request->url->move(public_path('upload'),$img_name);
     }
+
+
+
+
+
+
+
+
 
     public  function  view(){
        $articles= Article::all();

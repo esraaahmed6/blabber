@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Control</div>
+                <div class="panel-heading"><h4>Control</h4></div>
                 <div class="panel-body"> 
 
                   <div class="bs-example" data-example-id="panel-without-body-with-table">
                     <div class="panel panel-default">
-                      <div class="panel-heading">Panel heading</div>
+                      <div class="panel-heading"></div>
 
                       <table class="table">
                         <thead>
@@ -29,9 +29,9 @@
                             <td>{{$art->body}}</td>
                             <td>
 
-                           <!-- <a herf="{{"/delete/".$art->id}}" class="btn btn-danger pull-center">DELETE</a> -->
+                           <!-- <a herf="{{"/delete/".$art->id}}" class="btn btn- pull-center">DELETE</a> -->
                              
-                               <a href="{{ "/delete/".$art->id}}">delet</a>   
+                               <a href="{{ "/delete/".$art->id}}" class="btn btn-danger">Delet</a>   
                               
                             </td>
                           </tr>
