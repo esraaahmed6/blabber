@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Interfaces\ArticlesRepositryInterface;
 use App\Article;
 use Illuminate\Http\Request;
 
@@ -12,6 +12,13 @@ use App\Comment;
 use App\Post;
 use App\user;
 use App\Notifications\NotifypostOwner;
+
+
+
+
+
+
+
 
 class manage extends Controller
 {
@@ -46,22 +53,19 @@ class manage extends Controller
         return view('manage.view',$ar);
     }
 
-    public  function  read(Request $request ,$id){
+   public  function  read(Request $request ,$id , ArticlesRepositryInterface $ArticlesRepositryInterface){
         if ($request->isMethod('post')){
             $ar= new Comment();
             $ar->comment=$request->input('body');
             $ar->article_id= $id;
             $ar->user_id= Auth::user()->id;
             $ar->save();
-            // return redirect("view");
+           return redirect('manage.read');
         }
 
-        $article=Article::find($id);
+        $article = $ArticlesRepositryInterface->ReadArticle($id);
         $ar=Array('article'=>$article);
         return view("manage.read",$ar );
-        $post=Post::find($request ->post_id);
-        User::find($post->user->id)->notify(new NotifypostOwner($post));
-
     }
  
     

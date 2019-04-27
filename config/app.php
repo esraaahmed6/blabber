@@ -147,8 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-    Illuminate\Notifications\NotificationServiceProvider::class,
-
+        App\providers\RepositryServiceProvider::class,
         /*
          * Application Service Providers...
          */
