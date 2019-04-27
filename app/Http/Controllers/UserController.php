@@ -42,16 +42,6 @@ class UserController extends Controller
 
         $article=Article::find($id);
         $article->delete();
-       /* $comm= comment::all('article_id',$id);
-      if( hasValue($comm)){
-          $comm->delete();
-         $article->delete();
-         return redirect("view" );
-      }
-      else{
-           $article->delete();
-      } */
-       
         return redirect("view" );
     }
     

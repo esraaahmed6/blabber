@@ -22,6 +22,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+
 Route::auth();
 
 Route::get('/', 'guestController@viewG');
@@ -37,4 +38,7 @@ Route::get('/edit/{id}', 'UserController@edit');
 Route::post('/edit/{id}', 'UserController@edit');
 Route::get('/admin', 'UserController@control');
 Route::post('/search','UserController@search');
+Route::post('/contact','ContactMessageController@Addfeedback');
+
+
 //Route::get('/deletee/{id}', 'UserController@deletee');
