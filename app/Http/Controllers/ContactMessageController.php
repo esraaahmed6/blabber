@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\contact;
-use db ;
-
+use DB;
 class ContactMessageController extends Controller
 {
      public  function Addfeedback(Request $request){
@@ -23,5 +22,10 @@ class ContactMessageController extends Controller
       
     
     	return view('/contact');
+    }
+    public function showfeedback()
+    {
+    $feedback = DB::table('contact')->get();
+    return view('manage.feedback', compact('feedback'));
     }
 }

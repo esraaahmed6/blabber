@@ -49,7 +49,44 @@ margin-top: 9px;
   font-size: 17px;
   width: 170px ;
         }
-        
+        .dropbtn {
+  
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+   background-color: #ffffff; 
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
     </style>
 </head>
 
@@ -79,11 +116,17 @@ margin-top: 9px;
                      <li><a href="{{ url('/userProfile') }}">Profile</a></li>
                    
                     @if (Auth::user()->role >= 1)
-                    <li><a href="{{ url('/admin') }}">Control</a></li>
+                    <li>
+                    <div class="dropdown">
+                         <button class="dropbtn">Control</button>
+                          <div class="dropdown-content">
+                          <a href="{{ url('/admin') }}">Show Posts</a>
+                          <a href="{{ url('/user') }}">Show all users</a>
+                          <a href="{{ url('/feedback') }}">Users feedback</a>
+                          </div> </li>
+ 
                     @endif
-
-                    @endif
-                        
+                     @endif   
                      @if (Auth::check())
                     <li><a href="{{ url('/view') }}">Articles</a></li>
                      @endif
