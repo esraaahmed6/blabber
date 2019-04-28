@@ -24,11 +24,7 @@
      <tr>
        <td>All Comments</td>
       <td>{{$comments}}</td>
-     </tr>  
-     <tr>
-       <td>Most active user</td>
-      <td>{{$comments}}</td>
-     </tr>           
+     </tr>          
      </table>
     </div> 
        </div>

@@ -35,8 +35,8 @@ public function showuser()
     $users = DB::table('users')->count();
     $articles = DB::table('articles')->count();
     $comments = DB::table('comments')->count();
-    $most_comments = user::withCount('comments')->OrderBy('comments_count','desc')->first();
-    dd($most_comments->comments_count);
+   // $most_comments = user::withCount('comments')->OrderBy('comments_count','desc')->first();
+
     return view('manage.statistics', compact('users', 'articles', 'comments'));
   }
 

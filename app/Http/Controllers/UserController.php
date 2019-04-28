@@ -73,6 +73,12 @@ public function search(){
         return view ('manage.search')->withMessage('No Details found. Try to search again !');
 
 }
+public function categoryy($name)
+{
+  $cat= DB::table('categories')->where('name', $name)->value('id');
+  $articles=DB::table('articles')->where('category_id', $cat)->get();
+ return view('manage.category', compact('articles'));
+}
 
 
 /*public function deletee($id)

@@ -43,6 +43,7 @@ Route::post('/search','UserController@search');
 Route::post('/contact','ContactMessageController@Addfeedback');
 Route::get('/feedback','ContactMessageController@showfeedback');
 Route::get('/statistics','AdminController@statistics');
+Route::get('/category/{name}','UserController@categoryy');
 
 
 //Route::get('/deletee/{id}', 'UserController@deletee');

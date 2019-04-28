@@ -8,8 +8,22 @@
 
             <div class="form-group">
                 <label for="usr">title:</label>
+
                 <input type="text" name="title" class="form-control">
             </div>
+          <!--  <div>
+                <label for="usr">category:</label>
+                <form action="add">
+              <select name="cars">
+                <option value="Genral">Genral</option>
+                <option value="Technology">Technology</option>
+                <option value="Sciences">Sciences</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Art">Art</option>
+              </select>
+            </form>
+            </div>
+        <br> -->
             <div class="form-group">
                 <label for="usr">body:</label>
                 <textarea rows="4" cols="50"  name="body" class="form-control">
