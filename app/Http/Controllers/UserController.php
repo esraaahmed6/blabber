@@ -61,25 +61,6 @@ $ar= Article::find($id);
         return view('manage.edit',$arr);}
     }
 
-public function control()
-    { 
-         $articles = DB::table('articles')->get();
-        return view('manage.admin', compact('articles'));
-    }
-public function showuser()
-{
-   $users = DB::table('users')->get();
-    return view('manage.user', compact('users'));
-}
- public  function  blockuser(Request $request ,$id){
-       
-
-        $users=User::find($id);
-        $article=Article::find($id);
-        $article->delete();
-        $users->delete();
-        return redirect("manage.user" );
-    }
 
 
 public function search(){

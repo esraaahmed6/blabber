@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use SoftDeletes;
 class comment extends Model
 {
-    
+ 
     public $table="comments";
     
     public function article()

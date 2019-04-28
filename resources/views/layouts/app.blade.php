@@ -123,6 +123,7 @@ margin-top: 9px;
                           <a href="{{ url('/admin') }}">Show Posts</a>
                           <a href="{{ url('/user') }}">Show all users</a>
                           <a href="{{ url('/feedback') }}">Users feedback</a>
+                           <a href="{{ url('/statistics') }}">Blog Statistics</a>
                           </div> </li>
  
                     @endif

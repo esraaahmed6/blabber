@@ -36,12 +36,13 @@ Route::post('/read/{id}', 'manage@read');
 Route::get('/delete/{id}', 'UserController@delete');
 Route::get('/edit/{id}', 'UserController@edit');
 Route::post('/edit/{id}', 'UserController@edit');
-Route::get('/admin', 'UserController@control');
-Route::get('/user','UserController@showuser');
-Route::get('/block/{id}', 'UserController@blockuser');
+Route::get('/admin', 'AdminController@control');
+Route::get('/user','AdminController@showuser');
+Route::get('/block/{id}', 'AdminController@blockuser');
 Route::post('/search','UserController@search');
 Route::post('/contact','ContactMessageController@Addfeedback');
 Route::get('/feedback','ContactMessageController@showfeedback');
+Route::get('/statistics','AdminController@statistics');
 
 
 //Route::get('/deletee/{id}', 'UserController@deletee');
