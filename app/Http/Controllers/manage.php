@@ -60,7 +60,7 @@ class manage extends Controller
             $ar->article_id= $id;
             $ar->user_id= Auth::user()->id;
             $ar->save();
-           return redirect('manage.read');
+           //return redirect('manage.read');
         }
 
         $article = $ArticlesRepositryInterface->ReadArticle($id);

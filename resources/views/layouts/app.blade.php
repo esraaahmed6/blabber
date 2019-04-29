@@ -180,35 +180,6 @@
     This our blog! use it for more communication!
 </div>
 </div>
-<div class="card my-4">
-@if (Auth::check())
-<div class="container">
-    <form action="add" method="POST" enctype="multipart/form-data">
-        {{csrf_field()}}
-
-        <div class="form-group">
-            <label for="usr"><b>Title</b></label>
-            <input type="text" name="title" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="url"><b>Body</b></label>
-            <textarea rows="4" cols="50"  name="body" class="form-control">
-            </textarea>
-        </div>
-        <div class="form-group">
-            <label class="glyphicon glyphicon-camera"  for="usr"><b>Image</b></label>
-            <input id="url" type="file" name="url">
-        </div>
-
-    </br>
-    <div style="padding-bottom: 10px">
-    <input type="submit" value="add new" class="btn btn-primary"/>
-  </div>
-</form>
-
-</div>
-@endif
-</div>
 </div>
 
 <!-- Blog Entries Column -->
