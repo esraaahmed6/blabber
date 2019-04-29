@@ -26,13 +26,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request ,$id)
     {
-        $id = Auth::user()->id;
        $articles= Article::where('user_id','=',$id)->get();
         $ar=Array('articles'=>$articles);
-       
-    
         return view('userProfile',$ar);
     }
     
@@ -42,16 +39,6 @@ class UserController extends Controller
 
         $article=Article::find($id);
         $article->delete();
-       /* $comm= comment::all('article_id',$id);
-      if( hasValue($comm)){
-          $comm->delete();
-         $article->delete();
-         return redirect("view" );
-      }
-      else{
-           $article->delete();
-      } */
-       
         return redirect("view" );
     }
     
@@ -71,11 +58,7 @@ $ar= Article::find($id);
         return view('manage.edit',$arr);}
     }
 
-public function control()
-    { 
-         $articles = DB::table('articles')->get();
-        return view('manage.admin', compact('articles'));
-    }
+
 
 public function search(){
     $q = Input::get ( 'q' );
@@ -87,6 +70,14 @@ public function search(){
         return view ('manage.search')->withMessage('No Details found. Try to search again !');
 
 }
+public function categoryy($name)
+{
+  $cat= DB::table('categories')->where('name', $name)->value('id');
+  $articles=DB::table('articles')->where('category_id', $cat)->get();
+ return view('manage.category', compact('articles'));
+}
+
+
 /*public function deletee($id)
 {
     DB::table('articles')->where('id',$id)->delete();

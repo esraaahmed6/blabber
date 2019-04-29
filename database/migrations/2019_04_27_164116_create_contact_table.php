@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLikesTable extends Migration
+class CreateContactTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,15 @@ class CreateLikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('likes', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('article_id');
-            $table->boolean('like');
+            
+
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
             $table->timestamps();
+            
         });
     }
 
@@ -28,6 +31,6 @@ class CreateLikesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('likes');
+        Schema::drop('contact');
     }
 }

@@ -3,18 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
-
-
 use App\Article;
-
-
-
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Array_;
+use App\contact;
 use App\Comment;
+use DB ;
+
 
 class guestController extends Controller
 {
@@ -29,7 +25,6 @@ class guestController extends Controller
        return view('welcome',$ar);
       }
 
-
         public  function  readG(Request $request ,$id){
 
         $article=Article::find($id);
@@ -38,3 +33,4 @@ class guestController extends Controller
     }
 
 }
+

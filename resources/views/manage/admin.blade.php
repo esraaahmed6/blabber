@@ -22,28 +22,28 @@
                           </tr>
                         </thead>
                         <tbody>
-                        	@foreach($articles as $art)
+                          @foreach($articles as $art)
                           <tr>
                             <th scope="row">{{$art->user_id}}</th>
                             <td>{{$art->title}}</td>
                             <td>{{$art->body}}</td>
                             <td>
 
-                           <!-- <a herf="{{"/delete/".$art->id}}" class="btn btn- pull-center">DELETE</a> -->
+                             <!-- <a herf="{{"/delete/".$art->id}}" class="btn btn- pull-center">DELETE</a> -->
                              
-                               <a href="{{ "/delete/".$art->id}}" class="btn btn-danger">Delet</a>   
-                              
-                            </td>
-                          </tr>
-</div>
-                        </tbody>
-                        @endforeach
-                      </table>
-                    </div> 
-                  </div>
+                             <a href="{{ "/delete/".$art->id}}" class="btn btn-danger">Delet</a>   
+                             
+                           </td>
+                         </tr>
+                       </div>
+                     </tbody>
+                     @endforeach
+                   </table>
+                 </div> 
+               </div>
 
-                </div>
-            </div>
+             </div>
+           </div>
         </div>
     </div>
 </div>

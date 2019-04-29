@@ -9,22 +9,26 @@
   
         <!-- Blog Post -->
         <div class="card mb-4">
-          @foreach($articles as $art)
+         @foreach($articles as $art)
           <div class="card-body">
             <h2 class="card-title">{{$art->title}}</h2>
             <h2 class="card-title">
              <img class="img-fluid rounded" src="upload/{{$art->url}}" alt="">
            </h2>
             <p class="card-text"> {{ $art->body}} </p>
-            <a href="{{ "/readg/".$art->id}}"" class="btn btn-primary">Read More &rarr;</a>
+            <a href="{{ "/read/".$art->id}}"" class="btn btn-primary">Read More &rarr;</a>
 
+       
+        <!--like&&dislike -->
+                  
           </div> 
           <div class="card-footer text-muted">
             <p>
             <span class="glyphicon glyphicon-time"></span>   
             Posted on {{ $art->created_at->toDayDateTimeString() }} by
-            <a href="#">Start Bootstrap</a>
+             <a href="{{"/userProfile/".$art->user->id }}" >{{$art->user->name}}</a>
           </p>
+
           </div>
        @endforeach
         </div>
@@ -38,5 +42,3 @@
           </li>
         </ul>
 @endsection
-
-

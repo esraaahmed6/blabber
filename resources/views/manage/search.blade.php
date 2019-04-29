@@ -4,26 +4,39 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">  	
-                @if(isset($details))
-                <!-- <p> The Search results for your query <b> {{ $query }} </b> are :</p>-->
-                <h1 style="text-align: left;">Search Result</h1>
-                <table class="table table-striped">
+            <div class="panel panel-default">
+                 @if(isset($details))
+                <div class="panel-heading"><h1>Search Result</h1></div>
+                <div class="panel-body"> 
+
+                  <div class="bs-example" data-example-id="panel-without-body-with-table">
+                    <div class="panel panel-default">
+                      <div class="panel-heading"></div>
+
+                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>title</th>
-                            <th>body</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                          <tr>
+                            <th></th>
+                            <th>Tittle</th>
+                            <th>Body</th>
+                          </tr>
+                        </thead>
+                        <tbody>
                         @foreach($details as $article)
                         <tr>
+                            <th scope="row"></th>
                             <td>{{$article->title}}</td>
                             <td>{{$article->body}}</td>
                         </tr>
+                       </div>
+                        </tbody>
                         @endforeach
-                    </tbody>
-                </table>
+                      </table>
+                     
+                    </div> 
+                  </div>
+
+                </div>
                 @endif
             </div>
         </div>

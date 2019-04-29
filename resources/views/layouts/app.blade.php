@@ -10,6 +10,42 @@
 
   <title>Blog Home - Start Bootstrap Template</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="js/contact.css">
+
+    
+    <style>
+            
+        
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+   background-color: #ffffff; 
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+    </style>
 </head>
 
 <body style="padding:60px">
@@ -31,14 +67,22 @@
           </li>
           @if (Auth::check())
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/userProfile') }}">{{ Auth::user()->name }}</a>
+            <a class="nav-link" href="{{ "/userProfile/".Auth::user()->id}}"">{{ Auth::user()->name }}</a>
         </li>
-        @if (Auth::user()->role >= 1)
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/admin') }}">Control</a>
-        </li>
+         @if (Auth::user()->role >= 1)
+                   <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link" href="{{ url('/admin') }}">Control</a>
+                          <div class="dropdown-content">
+                          <a href="{{ url('/admin') }}">Show Posts</a>
+                          <a href="{{ url('/user') }}">Show all users</a>
+                          <a href="{{ url('/feedback') }}">Users feedback</a>
+                           <a href="{{ url('/statistics') }}">Blog Statistics</a>
+                          </div> </li>
+ 
+                    @endif
+        
 
-        @endif
 
         @endif
 
@@ -194,6 +238,7 @@
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

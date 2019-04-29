@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use articles;
-class AddUrlToArticle extends Migration
+
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class AddUrlToArticle extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-             $table->string('url');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +27,6 @@ class AddUrlToArticle extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('categories');
     }
 }
